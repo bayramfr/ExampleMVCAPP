@@ -1,0 +1,23 @@
+﻿@using ExampleMVCAPP.Models
+@model User
+
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditUser</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        @Html.TextBox("Username", null, new { @class = "form-control", @placeholder = "Username" })
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Surname</label>
+        @Html.TextBox("Password", null, new { @class = "form-control", @placeholder = "Password" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+

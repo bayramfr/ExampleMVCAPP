@@ -1,0 +1,39 @@
+﻿@model List<ExampleMVCAPP.Models.User>
+@{
+    ViewBag.Title = "UserView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserView</h2>
+<div><a href="/User/AddUser" class="btn btn-success">Add User</a></div>
+<br />
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Password</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Username</td>
+                        <td>@item.Password</td>
+                        <td><a href="/UserDetail/UserDetail/@item.ID" class="btn btn-primary">Add User Detail</a></td>
+                        <td><a href="/User/EditUser/@item.ID" class="btn btn-primary">Edit User</a></td>
+                        <td><a href="/User/DeleteUser/@item.ID" onclick = "return confirm('Are you sure you wish to delete this user?');" class="btn btn-danger">Delete User</a></td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>
