@@ -1,0 +1,8 @@
+2021-02-18 23:07:53.979 +03:00 [INF] Hello Serilog
+2021-02-18 23:08:01.355 +03:00 [INF] Login OK ------- okyun
+2021-02-18 23:08:02.773 +03:00 [INF] Hello Serilog
+2021-02-18 23:08:06.513 +03:00 [INF] Login OK ------- bayramemer
+2021-02-18 23:08:08.500 +03:00 [INF] Hello Serilog
+2021-02-18 23:08:18.645 +03:00 [WRN] Geçersiz. Kullanıcı adı ya da şifre hatalı.
+2021-02-18 23:08:20.721 +03:00 [WRN] Geçersiz. Kullanıcı adı ya da şifre hatalı.
+2021-02-18 23:08:23.903 +03:00 [INF] Login OK ------- okyun

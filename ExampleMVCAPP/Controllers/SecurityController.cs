@@ -1,5 +1,6 @@
 ﻿using ExampleMVCAPP.DataContext;
 using ExampleMVCAPP.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,9 @@ namespace ExampleMVCAPP.Controllers
         DBContext dbObj = new DBContext();
         public ActionResult Login()
         {
+            var log = new LoggerConfiguration().WriteTo.File(Server.MapPath("~/logFile.txt")).CreateLogger();
+            Log.Logger = log;
+            log.Information("Hello Serilog");
             return View();
         }
 
@@ -27,11 +31,15 @@ namespace ExampleMVCAPP.Controllers
             if (userInDb != null)
             {
                 FormsAuthentication.SetAuthCookie(user.Username, false);
+                Log.Information("Login OK ------- " + user.Username);
+                Log.CloseAndFlush();
                 return RedirectToAction("UserView", "User");
             }
             else
             {
                 ViewBag.Mesaj = "Geçersiz. Kullanıcı adı ya da şifre hatalı.";
+                Log.Warning("Geçersiz. Kullanıcı adı ya da şifre hatalı.");
+
                 return View();
             }
         }
